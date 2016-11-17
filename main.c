@@ -52,77 +52,9 @@ void ingresarOracion(char* oracion)
   scanf("%s", oracion);
 }
 
-void inicializarStrings(char* string, int largo)
-{
-  for(int i=0; i<largo; i++)
-  {
-    string[i]=0;
-  }
-}
-
-void inicializarCharEspeciales(charEspecial* caracteres, int largo)
-{
-  for(int i=0; i<largo; i++)
-  {
-    caracteres[i].caracter=0;
-    caracteres[i].posicion=0;
-  }
-}
-
-int primerLetra (char* oracion, int pos)
-{
-  int resultado = 0;
-  while(queTipoEs(oracion[pos]) == especial)
-  {
-    pos++;
-  }
-  return queTipoEs(oracion[pos])
-}
-
 void ordenarOracion(char* oracion, char* oracionTransformada, charEspecial* caracteres)
 {
-  int pos = 0;
-  int posVocales = 0;
-  int posConsonantes = 0;
-  int posInicioPalabra = 0;
-  int posOracionTransformada = 0;
-  int posCaracteresEspeciales = 0;
-  char vocales[MAX];
-  char consonantes[MAX]
-  int caracterInicial = 0; // 1 = vocal  2 = consonante
-  while (oracion[pos] != '\0')
-  {
-    posInicioPalabra = pos;
-    while (esCaracterEspecial(oracion[posInicioPalabra]))
-    {
-
-      posInicioPalabra++;
-    }
-    if (esVocal(oracion[posInicioPalabra]) caracterInicial = 1;
-    if (esConsonante(oracion[posInicioPalabra])) caracterInicial = 2;
-    while (oracion[pos] != ' ')
-    {
-      if (esVocal(oracion[pos]))
-      {
-        vocales[posVocales] = oracion[pos];
-        posVocales++;
-      }
-      if (esConsonante[oracion[pos]])
-      {
-        consonantes[posConsonantes] = oracion[pos];
-        posConsonantes++;
-      }
-      if (esCaracterEspecial)
-      {
-        if (oracion[pos + 1] == ' ')
-        {
-
-        }
-      }
-    }
-
-    pos++;
-  }
+  //la magia ha vuelto
 }
 
 void mostrarOracionTransformada(char* oracionTransformada)

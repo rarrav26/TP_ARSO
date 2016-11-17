@@ -51,7 +51,7 @@ void ordenarOracion(char* oracion, char* oracionTransformada, charEspecial* cara
     int posCaracteresEspeciales = 0;
     char vocales[MAX];
     char consonantes[MAX]
-    int caracterInicial = 0; // 1 = vocal  2 = consonante
+    int caracterInicial = 0; // 1 = vocal  2 = consonante//
     while(oracion[pos] != '\0')
     {
         posInicioPalabra=pos;

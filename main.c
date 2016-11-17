@@ -19,7 +19,8 @@ enum tipoChar
 {
   vocal,
   consonante,
-  especial
+  especial,
+  espacio
 };
 
 tipoChar queTipoEs(char);
@@ -93,7 +94,7 @@ void ordenarOracion(char* oracion, char* oracionTransformada, charEspecial* cara
   int posCaracteresEspeciales = 0;
   char vocales[MAX];
   char consonantes[MAX]
-  int caracterInicial = 0; // 1 = vocal  2 = consonante//
+  int caracterInicial = 0; // 1 = vocal  2 = consonante
   while (oracion[pos] != '\0')
   {
     posInicioPalabra = pos;
@@ -155,6 +156,10 @@ tipoChar queTipoEs(char letra)
   else if (((int)letra >= 65 && (int)letra <= 90) || ((int)letra >= 97 && (int)letra <= 122))
   {
     return tipoChar.consonante;
+  }
+  else if ((int)letra == 32)
+  {
+    return tipoChar.espacio;
   }
   else
   {

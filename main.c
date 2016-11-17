@@ -41,6 +41,23 @@ void ingresarOracion(char* oracion)
   scanf("%s", oracion);
 }
 
+void inicializarStrings(char* string, int largo)
+{
+  for(int i=0; i<largo; i++)
+  {
+    string[i]=0;
+  }
+}
+
+void inicializarCharEspeciales(charEspecial* caracteres, int largo)
+{
+  for(int i=0; i<largo; i++)
+  {
+    caracteres[i].caracter=0;
+    caracteres[i].posicion=0;
+  }
+}
+
 void ordenarOracion(char* oracion, char* oracionTransformada, charEspecial* caracteres)
 {
     int pos = 0;

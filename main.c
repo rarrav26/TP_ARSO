@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 //El caracter extra (41°) es agregado para el null '\0'
 #define MAX 41
@@ -14,8 +15,17 @@ struct charEspecial
   int posicion;
 };
 
+enum tipoChar
+{
+  vocal,
+  consonante,
+  especial
+};
+
+tipoChar queTipoEs(char);
+
 void ingresarOracion(char*);
-void ordenarOracion(char*, char*);
+void ordenarOracion(char*, char*, charEspecial*);
 void mostrarOracionTransformada(char*);
 void mostrarCaracteresEspeciales(charEspecial*);
 
@@ -60,47 +70,48 @@ void inicializarCharEspeciales(charEspecial* caracteres, int largo)
 
 void ordenarOracion(char* oracion, char* oracionTransformada, charEspecial* caracteres)
 {
-    int pos = 0;
-    int posVocales = 0;
-    int posConsonantes = 0;
-    int posInicioPalabra = 0;
-    int posOracionTransformada = 0;
-    int posCaracteresEspeciales = 0;
-    char vocales[MAX];
-    char consonantes[MAX]
-    int caracterInicial = 0; // 1 = vocal  2 = consonante//
-    while(oracion[pos] != '\0')
+  int pos = 0;
+  int posVocales = 0;
+  int posConsonantes = 0;
+  int posInicioPalabra = 0;
+  int posOracionTransformada = 0;
+  int posCaracteresEspeciales = 0;
+  char vocales[MAX];
+  char consonantes[MAX]
+  int caracterInicial = 0; // 1 = vocal  2 = consonante//
+  while (oracion[pos] != '\0')
+  {
+    posInicioPalabra = pos;
+    while (esCaracterEspecial(oracion[posInicioPalabra]))
     {
-        posInicioPalabra=pos;
-        while(esCaracterEspecial(oracion[posInicioPalabra]))
-        {
-            posInicioPalabra++;
-        }
-        if(esVocal(oracion[posInicioPalabra]) caracterInicial = 1;
-        if(esConsonante(oracion[posInicioPalabra])) caracterInicial = 2;
-        while(oracion[pos] != ' ')
-        {
-            if(esVocal(oracion[pos]))
-            {
-                vocales[posVocales] = oracion[pos];
-                posVocales++;
-            }
-            if(esConsonante[oracion[pos]])
-            {
-                consonantes[posConsonantes] = oracion[pos];
-                posConsonantes++;
-            }
-            if(esCaracterEspecial)
-            {
-                if(oracion[pos + 1] == ' ')
-                {
 
-                }
-            }
-        }
-
-        pos++;
+      posInicioPalabra++;
     }
+    if (esVocal(oracion[posInicioPalabra]) caracterInicial = 1;
+    if (esConsonante(oracion[posInicioPalabra])) caracterInicial = 2;
+    while (oracion[pos] != ' ')
+    {
+      if (esVocal(oracion[pos]))
+      {
+        vocales[posVocales] = oracion[pos];
+        posVocales++;
+      }
+      if (esConsonante[oracion[pos]])
+      {
+        consonantes[posConsonantes] = oracion[pos];
+        posConsonantes++;
+      }
+      if (esCaracterEspecial)
+      {
+        if (oracion[pos + 1] == ' ')
+        {
+
+        }
+      }
+    }
+
+    pos++;
+  }
 }
 
 void mostrarOracionTransformada(char* oracionTransformada)
@@ -116,5 +127,22 @@ void mostrarCaracteresEspeciales(charEspecial* caracteres)
   {
     printf("%c - Posicion: %i\n", caracteres[pos].caracter, caracteres[pos].posicion);
     pos++;
+  }
+}
+
+tipoChar queTipoEs(char letra)
+{
+  if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u' ||
+      letra == 'A' || letra == 'E' || letra == 'I' || letra == 'O' || letra == 'U')
+  {
+    return tipoChar.vocal;
+  }
+  else if (((int)letra >= 65 && (int)letra <= 90) || ((int)letra >= 97 && (int)letra <= 122))
+  {
+    return tipoChar.consonante;
+  }
+  else
+  {
+    return tipoChar.especial;
   }
 }

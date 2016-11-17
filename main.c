@@ -68,6 +68,21 @@ void inicializarCharEspeciales(charEspecial* caracteres, int largo)
   }
 }
 
+int primerLetra (char* oracion, int pos)
+{
+  // 1 = vocal
+  // 2 = consonante
+  //-1 = error
+  int resultado = 0;
+  while(resultado == 0)
+  {
+    if(esVocal(oracion[pos]) == true)return 1;
+    if(esConsonante(oracion[pos]) == true)return 2;
+    pos++;
+    if(pos == MAX) return -1;
+  }
+}
+
 void ordenarOracion(char* oracion, char* oracionTransformada, charEspecial* caracteres)
 {
   int pos = 0;

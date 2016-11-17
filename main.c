@@ -43,7 +43,47 @@ void ingresarOracion(char* oracion)
 
 void ordenarOracion(char* oracion, char* oracionTransformada, charEspecial* caracteres)
 {
-  //aca pasa la magia
+    int pos = 0;
+    int posVocales = 0;
+    int posConsonantes = 0;
+    int posInicioPalabra = 0;
+    int posOracionTransformada = 0;
+    int posCaracteresEspeciales = 0;
+    char vocales[MAX];
+    char consonantes[MAX]
+    int caracterInicial = 0; // 1 = vocal  2 = consonante
+    while(oracion[pos] != '\0')
+    {
+        posInicioPalabra=pos;
+        while(esCaracterEspecial(oracion[posInicioPalabra]))
+        {
+            posInicioPalabra++;
+        }
+        if(esVocal(oracion[posInicioPalabra]) caracterInicial = 1;
+        if(esConsonante(oracion[posInicioPalabra])) caracterInicial = 2;
+        while(oracion[pos] != ' ')
+        {
+            if(esVocal(oracion[pos]))
+            {
+                vocales[posVocales] = oracion[pos];
+                posVocales++;
+            }
+            if(esConsonante[oracion[pos]])
+            {
+                consonantes[posConsonantes] = oracion[pos];
+                posConsonantes++;
+            }
+            if(esCaracterEspecial)
+            {
+                if(oracion[pos + 1] == ' ')
+                {
+
+                }
+            }
+        }
+
+        pos++;
+    }
 }
 
 void mostrarOracionTransformada(char* oracionTransformada)

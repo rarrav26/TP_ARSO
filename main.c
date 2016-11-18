@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 
 //El caracter extra (41°) es agregado para el null '\0'
 #define MAX 41

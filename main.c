@@ -102,16 +102,12 @@ void ordenarOracion(char* oracion, char* nuevaOracion, struct charEspecial* cara
         if (queTipoEs(oracion[posPalabra]) == especial && (queTipoEs(oracion[posPalabra+1]) == espacio || queTipoEs(oracion[posPalabra+1]) == null))
         {
           caracterFinal = oracion[posPalabra];
-          /*
-          nuevaOracion[posNuevaOracion] = oracion[posPalabra];
-          posNuevaOracion++;
-          */
         }
         //Si es un caracter especial, lo guardamos para después mostrarlo
         else if (queTipoEs(oracion[posPalabra]) == especial)
         {
           caracteres[posCaracteres].caracter = oracion[posPalabra];
-          caracteres[posCaracteres].posicion = posPalabra;
+          caracteres[posCaracteres].posicion = posPalabra + 1;
           posCaracteres++;
         }
         //Si es una vocal, la guardamos en vocales
@@ -219,7 +215,7 @@ enum tipoChar queTipoEs(char letra)
   {
     return espacio;
   }
-  else if ((int)letra == 0)
+  else if ((int)letra == 0 || (int)letra == 10)
   {
     return null;
   }

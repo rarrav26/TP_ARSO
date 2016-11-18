@@ -29,7 +29,7 @@ void vaciarCharsEsp(struct charEspecial*);
 
 void ingresarOracion(char*);
 void ordenarOracion(char*, char*, struct charEspecial*);
-void armarNuevaOracion(char*, int*, char*, char*, char, enum tipoChar, bool);
+void agregarNuevaPalabra(char*, int*, char*, char*, char, enum tipoChar, bool);
 void mostrarNuevaOracion(char*);
 void mostrarCaracteresEspeciales(struct charEspecial*);
 
@@ -130,14 +130,14 @@ void ordenarOracion(char* oracion, char* nuevaOracion, struct charEspecial* cara
         posPalabra++;
       }
 
-      armarNuevaOracion(nuevaOracion, &posNuevaOracion, vocales, consonantes, caracterFinal, ordenarPrimero, primerLetra);
+      agregarNuevaPalabra(nuevaOracion, &posNuevaOracion, vocales, consonantes, caracterFinal, ordenarPrimero, primerLetra);
       pos = posPalabra - 1;
     }
     pos++;
   }
 }
 
-void armarNuevaOracion(char* nuevaOracion, int* posNuevaOracion, char* vocales, char* consonantes, char caracterFinal, enum tipoChar ordenarPrimero, bool primerLetra)
+void agregarNuevaPalabra(char* nuevaOracion, int* posNuevaOracion, char* vocales, char* consonantes, char caracterFinal, enum tipoChar ordenarPrimero, bool primerLetra)
 {
   int posVocales = 0, posConsonantes = 0;
   if (primerLetra)

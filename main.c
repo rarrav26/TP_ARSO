@@ -56,7 +56,7 @@ int main()
 void ingresarOracion(char* oracion)
 {
   printf("Ingrese una oracion (max. 40 caracteres): ");
-  scanf("%s", oracion);
+  fgets(oracion, MAX, stdin);
 }
 
 void ordenarOracion(char* oracion, char* nuevaOracion, struct charEspecial* caracteres)

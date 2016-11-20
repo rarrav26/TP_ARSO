@@ -84,6 +84,7 @@ void ordenarOracion(char* oracion, char* nuevaOracion, struct charEspecial* cara
       //Mientras que no sea un espacio y no sea un nulo
       while (queTipoEs(oracion[posPalabra]) != espacio && queTipoEs(oracion[posPalabra]) != null)
       {
+        //Determinamos si la primer letra en aparecer es vocal o consonante
         if (!primerLetra)
         {
           if (queTipoEs(oracion[posPalabra]) == vocal)
@@ -188,15 +189,15 @@ void mostrarCaracteresEspeciales(struct charEspecial* caracteres)
   if (caracteres[pos].caracter != '\0')
   {
     printf("Caracteres\tPosicion\n");
+    while(caracteres[pos].caracter != '\0')
+    {
+      printf("%c\t\t%i\n", caracteres[pos].caracter, caracteres[pos].posicion);
+      pos++;
+    }
   }
   else
   {
     printf("No se extrajeron caracteres especiales.\n");
-  }
-  while(caracteres[pos].caracter != '\0')
-  {
-    printf("%c\t\t%i\n", caracteres[pos].caracter, caracteres[pos].posicion);
-    pos++;
   }
 }
 
